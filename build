@@ -1,0 +1,5 @@
+#!/bin/sh
+ocamlfind ocamlc -package lwt,js_of_ocaml.syntax -g -c hello.ml
+ocamlfind ocamlc -package lwt,js_of_ocaml.syntax -I ~/.opam/4.01.0/lib/stublibs -g -linkpkg -o hello.byte js_of_ocaml.cma hello.cmo
+js_of_ocaml hello.byte
+rm *.byte *.cmi *.cmo
