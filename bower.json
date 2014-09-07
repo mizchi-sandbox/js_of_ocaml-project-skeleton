@@ -1,0 +1,21 @@
+{
+  "name": "simple_js_of_ocaml_project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mizchi/simple_js_of_ocaml_project",
+  "authors": [
+    "Koutarou Chikuba <miz404@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.11.1",
+    "jquery": "~2.1.1",
+    "Snap.svg": "~0.3.0"
+  }
+}

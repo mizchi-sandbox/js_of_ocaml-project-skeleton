@@ -1,3 +1,9 @@
 *.cmo
 *.cmi
 *.byte
+src/*.cmo
+src/*.cmi
+src/*.byte
+public/vendor.js
+public/main.js
+bower_components/

@@ -1,5 +1,18 @@
 #!/bin/sh
-ocamlfind ocamlc -package lwt,js_of_ocaml.syntax -g -c hello.ml
-ocamlfind ocamlc -package lwt,js_of_ocaml.syntax -I ~/.opam/4.01.0/lib/stublibs -g -linkpkg -o hello.byte js_of_ocaml.cma hello.cmo
-js_of_ocaml hello.byte
-rm *.byte *.cmi *.cmo
+TARGET="hello"
+SRC="src/"
+OUT="main.js"
+
+ocamlfind ocamlc \
+  -syntax camlp4o \
+  -package lwt,js_of_ocaml.syntax \
+  -g -c src/${TARGET}.ml
+ocamlfind ocamlc \
+  -package lwt,js_of_ocaml.syntax \
+  -I ~/.opam/4.02.0/lib/stublibs \
+  -g -linkpkg -o src/${TARGET}.byte \
+  js_of_ocaml.cma src/${TARGET}.cmo
+
+js_of_ocaml src/${TARGET}.byte
+mv src/${TARGET}.js public/${OUT}
+rm src/*.byte src/*.cmi src/*.cmo
